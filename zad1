@@ -1,0 +1,7 @@
+imie = input('podaj imie\n')
+nazwisko = input('podaj nazwisko\n')
+wiek = input('podaj wiek\n')
+if( int(wiek) >=18):
+    print('\nCzesc', imie, ' ', nazwisko, 'jestes pelnoletni!')
+else:
+    print('\nCzesc', imie , ' ', nazwisko, 'nie jestes pelnoletni')
