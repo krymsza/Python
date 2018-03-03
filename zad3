@@ -1,9 +1,0 @@
-mala = 97
-duza = 65
-n = input()
- 
-for i in range (0, 25):
-    if( i % int(n) == 0):
-         print( chr(mala) + " " + chr(duza))
-    mala = mala + 1
-    duza = duza + 1
