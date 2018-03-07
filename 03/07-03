@@ -2,3 +2,16 @@
 napis = "ala ma kota"
 lista = [(slowo, len(slowo)) for slowo in napis.split()]
 print (lista)
+
+#zadanie 2
+
+def fibo(n):
+    if(n<3):
+        return 1
+    else:
+      return fibo(n-1)+ fibo(n-2)
+
+n = input()
+lista = [(fibo(i)) for i in range (1,n+1)]
+print lista
+
