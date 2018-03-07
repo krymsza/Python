@@ -69,4 +69,19 @@ def F(Flog,lista):
 lista = [2,6,3,78,4,0]
 print(F(Flog, lista))
 
+#zadanie 5 
+
+#print(u"żółć żółą droga"[::2])
+from  math import sqrt
+
+def fun(lista, kontorlny):
+  li =[]
+  for i in range (0, len(lista)):
+    li.append( ( sqrt( (lista[i][0] - kontorlny[0])**2 + (lista[i][1] - kontorlny[1])**2),   ((lista[i][0]), (lista[i][1])))  )
+    
+  li.sort()
+  print (li)
+
+lista = [ [2,0], [1,1], [4,8] ]
+fun(lista, [0,0])
 
