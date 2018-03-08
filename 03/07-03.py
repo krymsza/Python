@@ -85,11 +85,10 @@ def fun(lista, kontorlny):
 lista = [ [2,0], [1,1], [4,8] ]
 fun(lista, [0,0])
 
-#zadanie 6 DOKONCZ NIE DZIALA
+#zadanie 6 
 #! python
 import sys, os
 #path = input("Podaj sciezke ")
-path="C:\"
 dirs = os.listdir( string(path) )
 
 for file in dirs:
