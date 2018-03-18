@@ -1,4 +1,5 @@
 #zad1
+
 class Complex(object):
   
   def __init__(self, a, b):
@@ -68,7 +69,7 @@ num3 = num1 - num2
 print (num3)
 print (num3 + num1) 
 print (num1 - num1) 
-print (num3 *2) 
+print (num3 * 2) 
 print (num2 * num1)
 print (num1 / num1)
 print (num1 > num3)
@@ -78,6 +79,27 @@ print (num1 == num3)
 
 
 
-
-
 #zad2
+
+class Point2D(object):
+  def __init__(self, x=0, y=0):
+    self.x=x
+    self.y=y
+  def distance(self, other):
+    return( (other.x - self.x)**2 + (other.y - self.y)**2 )**0.5
+    
+class Pint3D(Point2D):
+  def __init__(self,x=0 ,y=0, z=0):
+    super().__init__(x,y)
+    self.z=z
+  def distance(self, other):
+    return( (other.x - self.x)**2 + (other.y - self.y)**2 + (other.z - self.z)**2 )**0.5
+
+point = Point2D(2,0)
+other = Point2D()
+print(point.distance(other))
+
+
+
+
+#zad3
