@@ -38,14 +38,6 @@ class Complex(object):
       result.a = self.a / number
       return result
     
-    
-    
-    
-    #zad2
-    
-    
-    
-    
   def modul(self):
     return self.a**0.5 + self.b**0.5
     
@@ -83,3 +75,9 @@ print (num1 > num3)
 print (num1 < num3)
 print (num1 == num3)
 
+
+
+
+
+
+#zad2
