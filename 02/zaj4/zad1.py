@@ -10,8 +10,8 @@ def podz(napis):
 	slownik={}
 	for i in napis:
 		if i != "\n" and i != "":
-			a,b=i.split(":")
-			slownik[a]=b
+			key,val=i.split(":")
+			slownik[key]=val
 	return slownik
 
 print podz(napis)
