@@ -1,0 +1,117 @@
+napisU1 = u'żół'
+napisS = napisU1.encode('utf-8')
+napisU2 = napisS.decode('utf-8')
+print(len(napisS))
+print(len(napisU1))
+print(len(napisU2))
+
+napis = u'      TEST'
+print(napis.strip().center(30))
+print(napis.capitalize())
+print(napis.strip().capitalize())
+print(napis.lower().islower())
+napis = napis.strip()
+print(napis.startswith('T'))
+print(napis.rjust(30))
+napis2 = u'Test test'
+print(napis2.swapcase())
+print(napis2.title())
+print 'test' in napis2
+print (napis2.replace('test', 'ppp'))
+
+------------------------
+
+import re
+regex_email = re.compile(
+    r'''(?P<adres>
+         (?P<login>[\w+.]+)
+         @
+         (?P<domena>\w+(\.\w+)+)
+    )''', 
+    re.IGNORECASE | re.VERBOSE
+    )
+tekst = u' mail@gmail.com, "jan.nowak@wp.pl"'
+print(tekst)
+for match_object in regex_email.finditer(tekst):
+    print match_object.groupdict()
+
+------------------------
+
+import json
+dict = {
+    'k1':'w1',
+    'k2':'w2',
+    'k3':'w3',
+     3:[1,2,3]
+    }
+json_str  = json.dumps(dict)    #is instance of string
+print(json_str)
+
+dict2 = json.loads(json_str)
+print(dict2)
+
+------------------------
+
+import pickle
+dict = {
+    'k1':'w1',
+    'k2':'w2',
+    'k3':'w3',
+     3:[1,2,3]
+    }
+pickle_str  = pickle.dumps(dict)    #is instance of string
+print(pickle_str)
+
+dict2 = pickle.loads(json_str)
+print(dict2)
+
+------------------------ZADANIE1/2
+
+import sys
+import json
+width= input()
+text = 'text.txt'
+res=""
+k=1
+with open(text) as f:
+    for line in f:
+        line.strip()
+        if len(line)>width:
+            for i in range(len(line)):
+                if(k<=width):
+                    k+=1
+                    res=res+line[i]
+                else:
+                    k=2
+                    print res.center(width)
+                    res = line[i]
+        else: print line.center(width)
+print res.center(width)
+
+-----------------------ZADANIE2
+zad3--
+zad4
+
+#!/usr/bin/env python
+#encoding: utf-8
+import re
+pesel = re.compile(
+    r'''((?P<pesel>
+         (?P<year>[0-99]{1})
+         (?P<month>[1-12]{1})
+         (?P<day>[1-31]{1})
+         (?P<rest>[0-9]{3})
+         (?P<sex>[0-9]{1})
+         (?P<rest2>[0-9]{1})
+    )''', 
+    re.IGNORECASE | re.VERBOSE
+    )
+
+tekst = open('text.txt')
+for line in tekst:
+    lines = line.split()
+    for i in lines:
+        for match_object in pesel.finditer(i):
+            print match_object.groupdict()
+
+
