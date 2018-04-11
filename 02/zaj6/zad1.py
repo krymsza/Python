@@ -12,13 +12,14 @@ def sqrt(x):
         print(res)
     finally:
         print("koniec funcji")
-            
-print (sqrt(3/4000))
+
+print (sqrt(0.954)) 
 print()
-print (sqrt(4))
-print()
-print (sqrt(0.3535345))
-print()
-print (sqrt(-4))
+print (sqrt(9/700))
 print()
 print (sqrt("test"))
+print()
+print (sqrt(25))
+print()
+print (sqrt(-22))
+
