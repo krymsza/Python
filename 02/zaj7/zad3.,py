@@ -1,0 +1,34 @@
+
+import sqlite3
+connection = sqlite3.connect('biblioteka2.db')
+cursor = connection.cursor()
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS
+               ksiazki(id integer, tytul text, autor text, rokwyd integer)
+               ''')
+cursor.execute('''CREATE TABLE IF NOT EXISTS
+               czytelnicy(id integer, imie text, nazwisko text, pesel text)
+               ''')
+cursor.execute('''CREATE TABLE IF NOT EXISTS
+               wypozyczenia(idCZ integer, idKS integer)
+               ''')
+cursor.execute('''INSERT INTO ksiazki VALUES(1, 'rzeznia nr 5', 'Kurt Vonnegut', 1956)''')
+cursor.execute('''INSERT INTO ksiazki VALUES(2, 'Ania z zielonego wzgórza', 'Lucy Maud Montgomery', 1990)''')
+connection.commit()
+cursor.execute('''INSERT INTO czytelnicy VALUES(1,'Zosia ', 'Vonnegut', 96061325264)''')
+cursor.execute('''INSERT INTO czytelnicy VALUES(2, 'Laura', 'Sum', 67120618265)''')
+connection.commit()
+cursor.execute('''INSERT INTO wypozyczenia VALUES(1,2)''')
+cursor.execute('''INSERT INTO wypozyczenia VALUES(2,1)''')
+connection.commit()
+
+
+for i in cursor.execute('''SELECT DISTINCT cz.imie, k.tytul FROM czytelnicy as cz, ksiazki as k, wypozyczenia w WHERE cz.id = w.idCZ AND k.id = w.idKS
+          '''):
+    print (i)
+
+cursor.execute('DROP TABLE ksiazki')
+cursor.execute('DROP TABLE czytelnicy')
+cursor.execute('DROP TABLE wypozyczenia')
+
+connection.close()
