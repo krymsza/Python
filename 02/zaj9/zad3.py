@@ -87,7 +87,7 @@ root.minsize(width=350, height =300)
 root.maxsize(width=350, height=300)
 
 root.title("calculator")
-text_box = tk.Entry(frame, justify = tk.RIGHT, width = 30, font="Times 16 bold" )
+text_box = tk.Entry(frame, justify = tk.RIGHT, width = 25, font="Times 16 bold" )
 text_box.grid(row = 0, column = 0,columnspan = 8,padx=30, pady = 30)
 text_box.insert(0, "")       
         
